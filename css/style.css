@@ -245,9 +245,11 @@ form  input, textarea{
     padding: 15px 5px;
     border:#8A2BE2 2px solid;
     box-shadow:  0 2px 4px 0 #8A2BE2;
+    margin-top: 10px;
 }
 form textarea{
-    height: 100px
+    height: 100px;
+    width:50%
 }
 
 form input:focus{
@@ -260,6 +262,43 @@ form textarea:focus{
     border:#9d3df6 3px solid;
     box-shadow:  0 2px 4px 0 #3498db;
     outline: none;
+}
+
+form select {
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px 5px;
+    border: #8A2BE2 2px solid;
+    box-shadow: 0 2px 4px 0 #8A2BE2;
+    background-color: white;
+    font-size: 16px;
+}
+
+form select:focus {
+    border: #9d3df6 3px solid;
+    box-shadow: 0 2px 4px 0 #3498db;
+    outline: none;
+}
+
+form label {
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-top: 10px;
+}
+
+/* Service-specific input field wrappers */
+.service-fields {
+    padding: 10px;
+    border-left: 3px solid #8A2BE2;
+    background-color: #f9f9ff;
+    border-radius: 8px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Optional fade-in animation for nicer UX */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .btn{
@@ -442,7 +481,11 @@ form textarea:focus{
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        transform: none;
+        padding: 0;
     }
     
     .hero h1 {
@@ -468,15 +511,16 @@ form textarea:focus{
 
     .nav-links {
         position: fixed;
-        top: 60px;
+        top: 80px; /* adjust depending on your logo height */
         left: 0;
         width: 100%;
         background: white;
         flex-direction: column;
         align-items: center;
         padding: 2rem 0;
-        transform: translateY(-100%);
+        transform: translateY(-200%);
         transition: transform 0.3s ease;
+        z-index: 999;
     }
 
     .nav-links.active {

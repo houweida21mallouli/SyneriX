@@ -78,3 +78,15 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+// form
+function showServiceFields(value) {
+    const fields = document.querySelectorAll('.service-fields');
+    fields.forEach(field => field.style.display = 'none');
+    
+    if (value) {
+      const selected = document.getElementById(value + '_fields');
+      if (selected) selected.style.display = 'block';
+    }
+  }
